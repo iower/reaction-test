@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reaction test</title>
+</head>
+<body>
+<h1>Reaction test</h1>
+<div>Score: <span id="score">?</span> ms</div>
+<br>
+<div><strong id="signal">Press!</strong></div>
+<br>
+<button id="button">The button</button>
+<script>
+var measure = function() {
+	score.innerText = '?'
+	signal.innerText
+	var delay = 0.5 + Math.random()
+	signal.style.visibility = 'hidden'
+	setTimeout(function() {
+		signal.style.visibility = 'visible'
+		var time1 = performance.now()
+		button.onclick = function() {
+			var time2 = performance.now()
+			score.innerText = Math.ceil(time2 - time1)
+			button.onclick = measure
+		}
+	}, delay * 1000)
+}
+button.onclick = measure
+</script>
+</body>
+</html>
